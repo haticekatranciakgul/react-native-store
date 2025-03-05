@@ -7,29 +7,28 @@ import useFetch from '../../hook/useFetch/useFetch';
 import Loading from '../../components/Loading/Loading';
 import Error from '../../components/Error/Error';
 
+const Products = ({ navigation }) => {
+    const { loading, data, error } = useFetch(API_URL);
 
-const Products = () => {
-    const {loading, data, error} = useFetch(API_URL);
-    // console.log("render");
-    // console.log({loading, data: data.length, error});
-    // console.log('--------------------')
+    const handleProductSelect = id => {
+        navigation.navigate('DetailPage', {id});
+    }
 
-
-    const renderProduct = ({ item }) => <ProductCard product={item} />
+    const renderProduct = ({ item }) => (
+        <ProductCard product={item} onSelect={() => handleProductSelect(item.id)} />
+    );
 
     if (loading) {
         return (
             <Loading></Loading>
         );
     }
-    if(error){
+
+    if (error) {
         return (
             <Error></Error>
         );
     }
-
-
-
 
     return (
         <SafeAreaView >
