@@ -9,8 +9,6 @@ import Error from '../../components/Error/Error';
 
 const Products = ({ navigation }) => {
     const { loading, data, error } = useFetch(API_URL);
-    console.log("here");
-    console.log(API_URL);
     const handleProductSelect = id => {
         navigation.navigate('DetailPage', {id});
     }

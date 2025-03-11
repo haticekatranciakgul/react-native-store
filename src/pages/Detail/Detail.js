@@ -10,9 +10,6 @@ import { API_URL } from '@env';
 const Detail = ({ route }) => {
     const { id } = route.params;
     const { loading, error, data } = useFetch(`${API_URL}/${id}`);
-    console.log("here")
-    console.log(API_URL);
-    console.log("API'den gelen data:", data);
 
 
     if (loading) {
