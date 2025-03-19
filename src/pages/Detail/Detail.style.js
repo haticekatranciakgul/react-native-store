@@ -16,8 +16,8 @@ export default StyleSheet.create({
     image: {
         width: deviceSize.width,
         height: deviceSize.height/3,
-        resizeMode: 'contain', // Görselin tam olarak görünmesi için
-        borderRadius: 10,     // Opsiyonel, daha iyi görünüm için
+        resizeMode: 'contain', 
+        borderRadius: 10,    
     },
     title: {
         fontWeight: 'bold',

@@ -4,12 +4,12 @@ import styles from './Detail.style';
 import Loading from '../../components/Loading/Loading';
 import Error from '../../components/Error/Error';
 import useFetch from '../../hook/useFetch/useFetch';
-import { API_URL } from '@env';
+import { API_PRODUCT_URL } from '@env';
 
 
 const Detail = ({ route }) => {
     const { id } = route.params;
-    const { loading, error, data } = useFetch(`${API_URL}/${id}`);
+    const { loading, error, data } = useFetch(`${API_PRODUCT_URL}/${id}`);
 
 
     if (loading) {
