@@ -35,7 +35,7 @@ const Login = ({ navigation }) => {
 
         }
         else {
-            dispatch({type: 'SET_USER', payload:{user}})
+            dispatch({type: 'SET_USER', payload:{user}});
             navigation.navigate('ProductsPage');
         }
 
