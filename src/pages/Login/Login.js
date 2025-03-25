@@ -11,7 +11,6 @@ import Config from 'react-native-config';
 import { API_AUTH_URL } from '@env';
 import { useDispatch } from 'react-redux';
 
-
 // AsyncStorage.setItem('@user','ASSAD');
 // AsyncStorage.getItem('@user');
 // AsyncStorage.removeItem('');
@@ -26,11 +25,9 @@ const Login = ({ navigation }) => {
     }
 
     if (error) {
-        Alert.alert('Store', 'Error jfhjfjf!')
+        Alert.alert('Store', 'Error!')
 
     }
-
-    console.log(data)
 
     if (data) {
         if (data.status === 'Error') {
@@ -40,7 +37,6 @@ const Login = ({ navigation }) => {
         else {
             dispatch({type: 'SET_USER', payload:{user}})
             navigation.navigate('ProductsPage');
-           // dispatch({ type: 'SET-USER', payload: { user } })
         }
 
     }

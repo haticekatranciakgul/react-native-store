@@ -11,7 +11,6 @@ const Detail = ({ route }) => {
     const { id } = route.params;
     const { loading, error, data } = useFetch(`${API_PRODUCT_URL}/${id}`);
 
-
     if (loading) {
         return (
             <Loading></Loading>
@@ -23,8 +22,6 @@ const Detail = ({ route }) => {
             <Error></Error>
         );
     }
-
-
 
     return (
         <View style={styles.container}>
